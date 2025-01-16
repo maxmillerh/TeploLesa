@@ -5,27 +5,33 @@ const hover_panel_services = document.querySelector('.hover_panel_services');
 const cross_form = document.querySelector('.cross_form');
 const modal_background = document.querySelector('.modal_background');
 const btn_phone = document.getElementById('btn_phone');
-
+const form_input = document.getElementById('form_input');
+const placeholder = document.querySelector('.placeholder');
 const header_burger = document.querySelector('.header_burger');
 const menu = document.querySelector('.menu');
+const exit = document.querySelectorAll('.exit');
+console.log(exit); // Посмотрим, что найдено
 
-const exit = document.querySelector('.exit');
+if (window.innerWidth > 480) {
 
-li_project.addEventListener('mouseover', () => {
-    hover_panel_project.classList.remove('d-none');
-});
+    li_project.addEventListener('mouseover', () => {
+        hover_panel_project.style.display = "flex";
+    });
 
-li_project.addEventListener('mouseout', () => {
-    hover_panel_project.classList.add('d-none');
-});
+    li_project.addEventListener('mouseout', () => {
+        hover_panel_project.style.display = "none";
+    });
 
-li_services.addEventListener('mouseover', () => {
-    hover_panel_services.classList.remove('d-none');
-});
+    li_services.addEventListener('mouseover', () => {
+        hover_panel_services.style.display = "flex";
+    });
 
-li_services.addEventListener('mouseout', () => {
-    hover_panel_services.classList.add('d-none');
-});
+    li_services.addEventListener('mouseout', () => {
+        hover_panel_services.style.display = "none";
+    });
+
+}
+
 
 cross_form.addEventListener('click', () => {
     modal_background.classList.add('d-none');
@@ -35,8 +41,7 @@ btn_phone.addEventListener('click', () => {
     modal_background.classList.remove('d-none');
 });
 
-const form_input = document.getElementById('form_input');
-const placeholder = document.querySelector('.placeholder');
+
 
 form_input.addEventListener('focus', () => {
     placeholder.classList.add('active');
@@ -90,36 +95,55 @@ function validatePhoneNumber(phoneNumber) {
 
 //
 
+if (window.innerWidth < 480) {
+
+
+    
+
+function closeMenu() {
+    console.log('Закрытие меню');
+    hover_panel_project.style.display = 'none';
+    hover_panel_services.style.display = 'none';
+
+    menu.classList.add('d-none');
+}
+
 let open_menu = false;
 
 header_burger.addEventListener('click', () => {
     if (!open_menu) {
-        menu.classList.remove('hidden');
         header_burger.style.transform = 'rotate(90deg)';
-        hover_panel_project.classList.remove('d-none');
         open_menu = true;
+
+        menu.classList.remove('d-none');
     } else {
-        menu.classList.add('hidden');
-        hover_panel_project.classList.add('hidden');
         header_burger.style.transform = 'rotate(0deg)';
         open_menu = false;
+
+        closeMenu()
     }
 
 });
 
+    menu.classList.add('d-none');
+    hover_panel_project.style.display = 'none';
+    hover_panel_services.style.display = 'none';
 
-if (window.innerWidth < 480) {
     li_project.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        hover_panel_project.classList.remove('hidden');
-
-    });
-    exit.addEventListener('click', () => {
-        menu.classList.remove('hidden');
-        hover_panel_project.classList.add('hidden');
+        hover_panel_project.style.display = 'flex';
     });
 
+    li_services.addEventListener('click', () => {
+        hover_panel_services.style.display = 'flex';
+    });
+
+    exit.forEach(exit => {
+        exit.addEventListener('click', (event) => {
+            event.stopPropagation();
+            hover_panel_project.style.display = 'none';
+            hover_panel_services.style.display = 'none';
+        });
+    });
 
 
 }
-

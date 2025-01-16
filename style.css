@@ -102,6 +102,7 @@ body {
 }
 
 .hover_panel {
+    display: none;
     position: absolute;
     padding: 20px;
     background-color: var(--white);
@@ -113,6 +114,7 @@ body {
     top: 81px;
     left: -25px;
     width: 200px;
+   
 }
 
 .hover_panel ul {
@@ -130,6 +132,10 @@ body {
 .hover_panel a:hover{
     color: var(--orange_1);
     transition: ease 0.5s;
+}
+
+.exit{
+    display: none;
 }
 
 a{
