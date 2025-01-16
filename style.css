@@ -393,10 +393,14 @@ p {
     color: var(--white);
 }
 
-.works_card:hover .overlay{
+.works_card:hover .overlay {
     cursor: pointer;
     opacity: 0.85;
     transition: ease 0.5s;
+   }
+
+   .works_card:hover .shadow{
+    opacity: 0;
    }
 
    .overlay {
@@ -408,6 +412,16 @@ p {
     background: linear-gradient(160deg, var(--orange_1), var(--orange_2));
     opacity: 0; 
     border-radius: 10px;
+}
+
+.shadow{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 160px;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) );
 }
 
 .works_card:hover .works_photo_name>p, .work_arrow {
