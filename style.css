@@ -1,3 +1,4 @@
+/* Подключение шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
@@ -21,15 +22,40 @@ body {
     padding: 0 375px;
 }
 
-.section_main {
-    position: relative;
-    top:-80px;
-    width: 100%;
-    background-image: url("img/Rectangle2.jpg");
-    background-size: cover;
-    height: 700px;
-    margin-bottom: -25px;
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--gray);
 }
+
+.btn {
+    border-radius: 50px;
+    background: linear-gradient(160deg, var(--orange_1), var(--orange_2));
+    border: none;
+    font-weight: 700;
+    color: var(--white);
+}
+
+h3 {
+    font-size: 36px;
+    line-height: 46px;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.fw600 {
+    font-weight: 600;
+}
+
+/*Раздел Шапка сайта */
 
 .header {
     position: sticky;
@@ -50,10 +76,7 @@ body {
     font-weight: 500;
     margin: 0;
     color: var(--gray);
-    
-
 }
-
 
 .menu>li {
     position: relative;
@@ -62,18 +85,17 @@ body {
     line-height: 80px;
 }
 
-.menu>li:hover{
+.menu>li:hover {
     color: var(--orange_1);
     transition: ease 0.5s;
     cursor: pointer;
 }
 
-
 .menu>li:first-child {
     margin-left: 0;
 }
 
-
+/* кнопки проекты и услуги */
 .menu>li:nth-child(2)::after,
 .menu>li:nth-child(4)::after {
     content: "";
@@ -87,6 +109,7 @@ body {
     transform: rotate(45deg);
 }
 
+/* стрелочки у кнопок проекты и услуги */
 .menu>li:nth-child(2):hover::after,
 .menu>li:nth-child(4):hover::after {
     content: "";
@@ -101,6 +124,7 @@ body {
     transition: ease 0.5s;
 }
 
+/* всплывающее окно */
 .hover_panel {
     display: none;
     position: absolute;
@@ -110,14 +134,15 @@ body {
     box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.07);
 }
 
-.hover_panel_project, .hover_panel_services {
+.hover_panel_project,
+.hover_panel_services {
     top: 81px;
     left: -25px;
     width: 200px;
-   
+
 }
 
-.hover_panel ul {
+.hover_panel>ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -129,33 +154,30 @@ body {
     font-weight: 600;
 }
 
-.hover_panel a:hover{
+.hover_panel a:hover {
     color: var(--orange_1);
     transition: ease 0.5s;
 }
 
-.exit{
+.exit {
     display: none;
-}
-
-a{
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--gray);
-}
-
-
-.btn {
-    border-radius: 50px;
-    background: linear-gradient(160deg, var(--orange_1), var(--orange_2));
-    border: none;
-    font-weight: 700;
-    color: var(--white);
 }
 
 .header>.btn {
     padding: 10px 20px;
     font-size: 14px;
+}
+
+/* Главный раздел */
+
+.section_main {
+    position: relative;
+    top: -80px;
+    width: 100%;
+    background-image: url("img/Rectangle2.jpg");
+    background-size: cover;
+    height: 700px;
+    margin-bottom: -25px;
 }
 
 .main_content_text {
@@ -200,11 +222,11 @@ a{
     font-weight: 600;
 }
 
-.leadback a{
+.leadback>a {
     color: var(--white);
 }
 
-.leadback img{
+.leadback>img {
     filter: brightness(100) saturate(0%);
 }
 
@@ -213,6 +235,8 @@ a{
     background: var(--orange_3);
     cursor: pointer;
 }
+
+/* раздел с карточками категорий */
 
 .section_cards {
     display: flex;
@@ -230,7 +254,6 @@ a{
     border-radius: 10px;
     box-shadow: 0 10px 30px 0 rgb(0, 0, 0, 0.08);
     cursor: pointer;
-
 }
 
 .card:hover {
@@ -239,7 +262,8 @@ a{
     color: var(--orange_1);
 }
 
-.card:hover .card_text_arrow>span, .card_arrow {
+.card:hover .card_text_arrow>span,
+.card_arrow {
     color: var(--orange_1);
 }
 
@@ -247,22 +271,19 @@ a{
     opacity: 1;
 }
 
-
-.card_text_arrow{
+.card_text_arrow {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 30px 0 35px 30px;
-   
 }
 
 .card>img {
-max-width: 100%;
-align-self: flex-end;
-
+    max-width: 100%;
+    align-self: flex-end;
 }
 
-.card_arrow{
+.card_arrow {
     position: static;
     align-self: flex-start;
     opacity: 0;
@@ -275,6 +296,8 @@ align-self: flex-end;
     color: var(--gray);
 }
 
+/* Раздел "О нас" */
+
 .section_building {
     position: relative;
     display: flex;
@@ -283,33 +306,17 @@ align-self: flex-end;
     margin-bottom: 60px;
 }
 
-.building_icon span{
-   max-width: 142px;
+.building_icon>span {
+    max-width: 142px;
 }
-
 
 .section_building>img {
     margin-top: 28px;
 }
 
-h3 {
-    font-size: 36px;
-    line-height: 46px;
-    margin: 0;
-    font-weight: 600;
-    text-align: center;
-}
-
-.section_building h3{
+.section_building h3 {
     text-align: start;
     max-width: 580px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    margin: 0;
 }
 
 .building_text_blok>p {
@@ -319,7 +326,6 @@ p {
 .building_icons {
     display: flex;
     justify-content: space-between;
-
 }
 
 .building_icon {
@@ -342,6 +348,8 @@ p {
     bottom: -380px;
 }
 
+/* Раздел "Наши работы" */
+
 .section_works {
     display: flex;
     flex-direction: column;
@@ -361,7 +369,6 @@ p {
     margin: 50px 0 30px 0;
 }
 
-
 .works_card {
     position: relative;
     border-radius: 10px;
@@ -369,14 +376,11 @@ p {
     cursor: pointer;
 }
 
-
-
 .works_card>img {
     display: block;
     width: 100%;
     height: auto;
     z-index: 1;
-
 }
 
 .works_photo_name {
@@ -393,46 +397,48 @@ p {
     color: var(--white);
 }
 
-.works_card:hover .overlay {
+.works_card:hover>.overlay {
     cursor: pointer;
     opacity: 0.85;
     transition: ease 0.5s;
-   }
+}
 
-   .works_card:hover .shadow{
+.works_card:hover>.shadow {
     opacity: 0;
-   }
+}
 
-   .overlay {
-    position: absolute; 
+.overlay {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(160deg, var(--orange_1), var(--orange_2));
-    opacity: 0; 
+    opacity: 0;
     border-radius: 10px;
 }
 
-.shadow{
+.shadow {
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
     height: 160px;
     border-radius: 0 0 10px 10px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
-.works_card:hover .works_photo_name>p, .work_arrow {
- display: block;
- transition: ease 0.5s;
+.works_card:hover .works_photo_name>p,
+.work_arrow {
+    display: block;
+    transition: ease 0.5s;
 }
+
 .works_card:hover .work_arrow {
     display: block;
     transition: ease 0.5s;
-   }
-   
+}
+
 .works_photo_name>p {
     font-size: 14px;
     color: var(--white);
@@ -440,10 +446,12 @@ p {
     display: none;
 }
 
-.work_arrow{
+.work_arrow {
     filter: brightness(100) saturate(0);
     display: none;
 }
+
+/* Раздел "Преимущества" */
 
 .section_advantages {
     position: relative;
@@ -476,6 +484,8 @@ p {
     top: -253px;
     left: 0;
 }
+
+/* Раздел Заявка */
 
 .section_application {
     background: linear-gradient(180deg, var(--orange_1), var(--orange_2));
@@ -518,7 +528,8 @@ p {
     gap: 10px;
 }
 
-.application_form>input , .input_block>input{
+.application_form>input,
+.input_block>input {
     width: 222px;
     height: 50px;
     padding: 14px 20px;
@@ -528,18 +539,19 @@ p {
 }
 
 .application_form>input:focus {
-outline: none;
-border: solid 1px #B3DAFF;
-
+    outline: none;
+    border: solid 1px #B3DAFF;
 }
 
-.application_form>input::placeholder, .modal_form>input::placeholder {
+.application_form>input::placeholder,
+.modal_form>input::placeholder {
     color: #BABABA;
     font-size: 16px;
     line-height: 16px;
 }
 
-.application_form>button , .modal_form>button{
+.application_form>button,
+.modal_form>button {
     width: 222px;
     height: 50px;
     padding: 14px 40px;
@@ -552,7 +564,7 @@ border: solid 1px #B3DAFF;
     font-weight: 700;
 }
 
-.application_form>button:hover{
+.application_form>button:hover {
     background-color: #222222;
     cursor: pointer;
     transition: ease 0.5s;
@@ -570,6 +582,8 @@ border: solid 1px #B3DAFF;
     right: 206px;
 }
 
+/* Раздел Информация */
+
 .section_info {
     display: flex;
     height: 410px;
@@ -582,7 +596,7 @@ border: solid 1px #B3DAFF;
     padding-right: 30px;
 }
 
-.info_textBlock h1 {
+.info_textBlock>h1 {
     margin: 0;
     font-size: 36px;
     line-height: 46px;
@@ -590,13 +604,13 @@ border: solid 1px #B3DAFF;
     margin-bottom: 15px;
 }
 
-.info_textBlock p {
+.info_textBlock>p {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 30px;
 }
 
-.info_textBlock h2 {
+.info_textBlock>h2 {
     margin: 0;
     font-size: 24px;
     line-height: 34px;
@@ -622,6 +636,8 @@ border: solid 1px #B3DAFF;
 .info_textBlock::-webkit-scrollbar-thumb:hover {
     background: var(--gray);
 }
+
+/* Подвал */
 
 .footer {
     background-color: var(--gray);
@@ -673,10 +689,6 @@ border: solid 1px #B3DAFF;
     transition: filter 0.5s ease;
 }
 
-.fw600 {
-    font-weight: 600;
-}
-
 .contacts {
     flex: 1;
     display: flex;
@@ -694,8 +706,6 @@ border: solid 1px #B3DAFF;
     gap: 5px;
 }
 
-
-
 .footer hr {
     border: none;
     width: calc(100% - 2px);
@@ -703,7 +713,6 @@ border: solid 1px #B3DAFF;
     background-color: #7D7D7D;
     margin: 0;
     padding: 0;
-
 }
 
 .copyraty {
@@ -730,7 +739,7 @@ border: solid 1px #B3DAFF;
     gap: 10px;
 }
 
-.by span {
+.by>span {
     margin-bottom: 6px;
 }
 
@@ -739,23 +748,24 @@ border: solid 1px #B3DAFF;
     margin-bottom: 0;
 }
 
-.modal_background{
+/* Модальное окно заявки */
+
+.modal_background {
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     left: 0;
     background-color: rgb(0, 0, 0, 0.40);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 101;
-
 }
 
-.modal_form{
+.modal_form {
     position: relative;
-   background-color: var(--white);
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     padding: 45px 28px 40px 28px;
@@ -763,71 +773,69 @@ border: solid 1px #B3DAFF;
     text-align: center;
 }
 
-.input_block{
+.input_block {
     position: relative;
 }
 
-.input_block input{
+.input_block>input {
     border: solid #E3E1E1 1px;
     margin-bottom: 10px;
     padding: 23px 20px 5px 20px;
- }
+}
 
- .input_block input:focus{
+.input_block>input:focus {
     border: solid 1px #B3DAFF;
     outline: none;
- }
- 
- .placeholder.red{
+}
+
+.placeholder.red {
     color: #FF0000;
- }
+}
 
- .placeholder.green{
+.placeholder.green {
     color: #46be00;
- }
- 
+}
 
- .placeholder{
+.placeholder {
     position: absolute;
     left: 20px;
     top: 14px;
     font-size: 16px;
     color: #777777;
- }
-
- .placeholder.active {
-    top: 7px; 
-    font-size: 11px; 
-
 }
 
-.modal_form span{
+.placeholder.active {
+    top: 7px;
+    font-size: 11px;
+}
+
+.modal_form>span {
     color: #A4A4A4;
     font-size: 12px;
     margin-top: 13px;
 }
 
-.modal_form a{
+.modal_form>a {
     color: #A4A4A4;
     font-size: 12px;
     text-decoration: underline;
 }
 
-.modal_form h2{
+.modal_form>h2 {
     font-size: 20px;
     font-weight: 600;
     margin: 0 0 19px 0px;
 }
 
-.cross_form{
+.cross_form {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
 }
 
-.cross_form:hover{
-    filter: brightness(0) ;
+.cross_form:hover {
+    filter: brightness(0);
     transition: ease 0.5s;
 }
 
@@ -835,6 +843,6 @@ border: solid 1px #B3DAFF;
     display: none;
 }
 
-.header_burger{
+.header_burger {
     display: none;
 }

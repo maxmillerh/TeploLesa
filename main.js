@@ -1,17 +1,25 @@
+// Выбор элементов меню
 const li_project = document.getElementById('li_project');
 const li_services = document.getElementById('li_services');
 const hover_panel_project = document.querySelector('.hover_panel_project');
 const hover_panel_services = document.querySelector('.hover_panel_services');
+
+// Элементы модального окна
 const cross_form = document.querySelector('.cross_form');
 const modal_background = document.querySelector('.modal_background');
 const btn_phone = document.getElementById('btn_phone');
+
+// Поле ввода телефона
 const form_input = document.getElementById('form_input');
 const placeholder = document.querySelector('.placeholder');
+
+// Бургер-меню для мобильных устройств
 const header_burger = document.querySelector('.header_burger');
 const menu = document.querySelector('.menu');
 const exit = document.querySelectorAll('.exit');
-console.log(exit); // Посмотрим, что найдено
 
+
+// Обработчики событий для меню
 if (window.innerWidth > 480) {
 
     li_project.addEventListener('mouseover', () => {
@@ -33,25 +41,26 @@ if (window.innerWidth > 480) {
 }
 
 
+// Закрытие модального окна
 cross_form.addEventListener('click', () => {
     modal_background.classList.add('d-none');
 });
 
+// Открытие модального окна
 btn_phone.addEventListener('click', () => {
     modal_background.classList.remove('d-none');
 });
 
-
-
+// Обработчики событий для ввода телефона
 form_input.addEventListener('focus', () => {
     placeholder.classList.add('active');
 });
 
+//Вывод результата валидации
 form_input.addEventListener('blur', () => {
     if (form_input.value === '') {
         placeholder.classList.remove('active');
     } else {
-        console.log('Отформатированный номер:', form_input.value); // Логирование для отладки
         if (!validatePhoneNumber(form_input.value)) {
             placeholder.classList.add('red');
             placeholder.classList.remove('green');
@@ -85,54 +94,45 @@ function formatPhoneNumber(value) {
     }
     return '+7 (' + value.slice(1, 4) + ') ' + value.slice(4, 7) + '-' + value.slice(7, 9) + '-' + value.slice(9, 11);
 }
-
+// Проверка формата номера телефона
 function validatePhoneNumber(phoneNumber) {
-    // Проверяем, что номер соответствует формату +7 (XXX) XXX-XX-XX
-    const regex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/; // Регулярное выражение для проверки формата
-    return regex.test(phoneNumber); // Проверка по регулярному выражению
+    const regex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    return regex.test(phoneNumber);
 }
 
 
-//
-
+// Логика меню для мобильных устройств
 if (window.innerWidth < 480) {
 
-
-    
-
-function closeMenu() {
-    console.log('Закрытие меню');
-    hover_panel_project.style.display = 'none';
-    hover_panel_services.style.display = 'none';
-
-    menu.classList.add('d-none');
-}
-
-let open_menu = false;
-
-header_burger.addEventListener('click', () => {
-    if (!open_menu) {
-        header_burger.style.transform = 'rotate(90deg)';
-        open_menu = true;
-
-        menu.classList.remove('d-none');
-    } else {
-        header_burger.style.transform = 'rotate(0deg)';
-        open_menu = false;
-
-        closeMenu()
+    function closeMenu() {
+        hover_panel_project.style.display = 'none';
+        hover_panel_services.style.display = 'none';
+        menu.classList.add('d-none');
     }
 
-});
+    // Обработчик клика на бургер
+    let open_menu = false;
+    header_burger.addEventListener('click', () => {
+        if (!open_menu) {
+            header_burger.style.transform = 'rotate(90deg)';
+            open_menu = true;
+            menu.classList.remove('d-none');
+        } else {
+            header_burger.style.transform = 'rotate(0deg)';
+            open_menu = false;
+            closeMenu()
+        }
+
+    });
 
     menu.classList.add('d-none');
     hover_panel_project.style.display = 'none';
     hover_panel_services.style.display = 'none';
-
+    // Обработчик клика на "Проекты"
     li_project.addEventListener('click', () => {
         hover_panel_project.style.display = 'flex';
     });
-
+    // Обработчик клика на "Услуги"
     li_services.addEventListener('click', () => {
         hover_panel_services.style.display = 'flex';
     });
